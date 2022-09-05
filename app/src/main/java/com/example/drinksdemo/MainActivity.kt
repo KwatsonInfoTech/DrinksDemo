@@ -3,12 +3,15 @@ package com.example.drinksdemo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.util.LogPrinter
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.drinksdemo.adapter.DrinkAdapter
 import com.example.drinksdemo.databinding.ActivityMainBinding
 import com.example.drinksdemo.viewModel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import java.lang.Exception
+import javax.security.auth.login.LoginException
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -43,8 +46,9 @@ class MainActivity : AppCompatActivity() {
         // VM observes changes in live data
 
         viewModel.respData.observe(this){
-            //Log.i("Drink",it.strDrink)
-            drinkAdapter.submitList(this.drinkAdapter.currentList)
+          //  Log.i("Drink",it.)
+            drinkAdapter.submitList(it.drinks)
+
 
         }
 
